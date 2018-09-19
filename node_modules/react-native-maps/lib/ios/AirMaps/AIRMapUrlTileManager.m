@@ -33,6 +33,5 @@ RCT_EXPORT_MODULE()
 }
 
 RCT_EXPORT_VIEW_PROPERTY(urlTemplate, NSString)
-RCT_EXPORT_VIEW_PROPERTY(maximumZ, NSInteger)
 
 @end

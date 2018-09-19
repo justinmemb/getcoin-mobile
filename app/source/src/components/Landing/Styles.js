@@ -1,27 +1,20 @@
-/**
- * Landing Styles
- */
-
 import { StyleSheet, Dimensions } from 'react-native';
-
-const { width, height } = Dimensions.get('window');
-
-import { colors } from 'app/constants/AppConstants';
-
+const{width, height} = Dimensions.get('window');
+import {colors} from "app/constants/AppConstants"
 export default StyleSheet.create({
     container_bg: {
         flex: 1,
-        backgroundColor: 'transparent',
+        backgroundColor:'transparent',
         justifyContent: 'center',
     },
-    app_heading: {
+    app_heading:{
         textAlign: 'center',
         color: '#fff',
         marginBottom: 50,
         fontSize: 42,
-        fontWeight: 'bold',
+        fontWeight: 'bold'
     },
-    text_white: {
-        color: '#fff',
+
+
     },
 });

@@ -21,7 +21,7 @@ const StateUtils = {
    * routes of the navigation state, or -1 if it is not present.
    */
   indexOf(state, key) {
-    return state.routes.findIndex(route => route.key === key);
+    return state.routes.map(route => route.key).indexOf(key);
   },
 
   /**
@@ -116,32 +116,12 @@ const StateUtils = {
 
   /**
    * Replace a route by a key.
-   * Note that this moves the index to the position to where the new route in the
-   * stack is at and updates the routes array accordingly.
+   * Note that this moves the index to the positon to where the new route in the
+   * stack is at.
    */
-  replaceAndPrune(state, key, route) {
+  replaceAt(state, key, route) {
     const index = StateUtils.indexOf(state, key);
-    const replaced = StateUtils.replaceAtIndex(state, index, route);
-
-    return {
-      ...replaced,
-      routes: replaced.routes.slice(0, index + 1),
-    };
-  },
-
-  /**
-   * Replace a route by a key.
-   * Note that this moves the index to the position to where the new route in the
-   * stack is at. Does not prune the routes.
-   * If preserveIndex is true then replacing the route does not cause the index
-   * to change to the index of that route.
-   */
-  replaceAt(state, key, route, preserveIndex = false) {
-    const index = StateUtils.indexOf(state, key);
-    const nextIndex = preserveIndex ? state.index : index;
-    let nextState = StateUtils.replaceAtIndex(state, index, route);
-    nextState.index = nextIndex;
-    return nextState;
+    return StateUtils.replaceAtIndex(state, index, route);
   },
 
   /**
@@ -157,7 +137,7 @@ const StateUtils = {
       route.key
     );
 
-    if (state.routes[index] === route && index === state.index) {
+    if (state.routes[index] === route) {
       return state;
     }
 
@@ -173,7 +153,7 @@ const StateUtils = {
 
   /**
    * Resets all routes.
-   * Note that this moves the index to the position to where the last route in the
+   * Note that this moves the index to the positon to where the last route in the
    * stack is at if the param `index` isn't provided.
    */
   reset(state, routes, index) {

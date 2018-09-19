@@ -1,43 +1,44 @@
 import { StyleSheet, Dimensions } from 'react-native';
-
-const { width, height } = Dimensions.get('window');
-
-import { colors } from 'app/constants/AppConstants';
-
+const{width, height} = Dimensions.get('window');
+import {colors} from "app/constants/AppConstants"
 export default StyleSheet.create({
-
-    container_center: {
+    container_center:{
         marginTop: 30,
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingHorizontal: 15,
+        //margin: 30,
+        alignItems:'center',
+        justifyContent:'center',
+        paddingHorizontal:15,
+
     },
+
     text_link: {
-        fontSize: 15,
+        fontSize:15,
         margin: 5,
         textAlign: 'center',
-        color: 'white'      ,
+        color:'white',
     },
-    text_link1: {
-        fontSize: 15,
+
+    text_link1:{
+        fontSize:15,
         textAlign: 'center',
-        color: colors.whiteColor,
+        color:colors.whiteColor,
+
     },
     text_discription: {
-        fontSize: 15,
+        fontSize:15,
         margin: 5,
         textAlign: 'center',
-        color: 'white',
+        color:'white',
     },
-    err_msg_text: {
+    err_msg_text:{
         color: '#ccc',
-        fontSize: 14,
+        fontSize:14,
         fontWeight: 'bold',
         textAlign: 'center',
         padding: 5,
     },
     heading_title: {
-        marginTop: 0,
+        marginTop:0,
         fontSize: 16,
         fontWeight: 'bold',
         textAlign: 'center',
@@ -46,7 +47,7 @@ export default StyleSheet.create({
     },
     container_bg: {
         flex: 1,
-        backgroundColor: 'transparent',
+        backgroundColor:'transparent',
         justifyContent: 'center',
     },
     wrap: {

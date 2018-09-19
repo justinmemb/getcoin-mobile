@@ -24,7 +24,6 @@
 @property (nonatomic, strong) MKTileOverlayRenderer *renderer;
 
 @property (nonatomic, copy) NSString *urlTemplate;
-@property NSInteger maximumZ;
 
 #pragma mark MKOverlay protocol
 
